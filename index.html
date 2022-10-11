@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap');
+    
+        body{
+            height:100vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lato',sans-serif;
+            font-weight:600;
+        }
+
+        button{
+            padding:15px;
+            background-color: transparent;
+            color:grey;
+            border:2px solid grey;
+            border-radius: 8px;
+            cursor:pointer;
+        }
+
+        button:click{
+            transform:scale(0.5,0.5);
+        }
+        
+        h1{
+            text-transform: uppercase;
+            display:none;
+            text-align: center;
+        }
+
+        @media screen and (max-width){
+            h1{font-size: 50%;}
+        }
+        
+    </style>
+    <title>Change background color</title>
+</head>
+<body>
+    <h1>HEX COLOR : #6AD56E</h1>
+    <button onClick='changeBg()' type='button'>
+        Click Me!
+    </button>
+    <script type="text/javascript">
+
+       
+        function generateRand(){
+    var arr1 = ['a','b','c','d','e','f','1','2','3','4','5','6','7','8','9'];
+    var word = '#';
+    for(var i=0;i<6;i++){
+    word += arr1[Math.round(Math.random()*(arr1.length-1))];
+     }
+    return word;
+        }
+    
+        var btn= document.querySelector('button');
+
+        var h1 = document.querySelector('h1');
+//    btn.addEventListener('click',trans());
+    function changeBg(){
+      document.body.style.backgroundColor = generateRand();
+      h1.style.display = 'block';
+      h1.textContent = 'HEX CODE : '+generateRand();
+    }
+
+   
+
+    function trans(){
+        btn.style.transform='scale(0.5,0.5)';
+    }
+
+
+
+    
+    </script>
+</body>
+</html>
